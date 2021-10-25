@@ -1,0 +1,11 @@
+<a href=" {% url 'testapp2:home' %} "><h2>Home</h2></a>
+<h1>Recipe lists</h1>
+{% if recipe}
+    {% for item in recipe %}
+              <a href="{% url 'testapp2:details' item.id %}"> {{item.food}}</a>
+    {% endfor %}
+{% else %}
+<p>No data created</p>
+{% endif %}
+<br>
+<br><a href="{% url 'testapp2:create'%}"><h3>Add Recipe</h3></a>
